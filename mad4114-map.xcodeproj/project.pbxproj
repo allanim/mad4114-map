@@ -12,6 +12,10 @@
 		9D791DEC21BB837B008270D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D791DEA21BB837B008270D9 /* Main.storyboard */; };
 		9D791DEE21BB837C008270D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D791DED21BB837C008270D9 /* Assets.xcassets */; };
 		9D791DF121BB837C008270D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D791DEF21BB837C008270D9 /* LaunchScreen.storyboard */; };
+		9D791DFA21BB85DC008270D9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D791DF921BB85DC008270D9 /* CoreLocation.framework */; };
+		9D791DFC21BC9C5F008270D9 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D791DFB21BC9C5F008270D9 /* Country.swift */; };
+		9D791DFE21BC9D68008270D9 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D791DFD21BC9D68008270D9 /* Border.swift */; };
+		9D791E0021BC9FE9008270D9 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D791DFF21BC9FE9008270D9 /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		9D791DED21BB837C008270D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D791DF021BB837C008270D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D791DF221BB837C008270D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D791DF921BB85DC008270D9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9D791DFB21BC9C5F008270D9 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		9D791DFD21BC9D68008270D9 /* Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
+		9D791DFF21BC9FE9008270D9 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D791DFA21BB85DC008270D9 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,7 @@
 			children = (
 				9D791DE521BB837B008270D9 /* mad4114-map */,
 				9D791DE421BB837B008270D9 /* Products */,
+				9D791DF821BB85DC008270D9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +70,19 @@
 				9D791DED21BB837C008270D9 /* Assets.xcassets */,
 				9D791DEF21BB837C008270D9 /* LaunchScreen.storyboard */,
 				9D791DF221BB837C008270D9 /* Info.plist */,
+				9D791DFB21BC9C5F008270D9 /* Country.swift */,
+				9D791DFD21BC9D68008270D9 /* Border.swift */,
+				9D791DFF21BC9FE9008270D9 /* Store.swift */,
 			);
 			path = "mad4114-map";
+			sourceTree = "<group>";
+		};
+		9D791DF821BB85DC008270D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D791DF921BB85DC008270D9 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +156,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D791E0021BC9FE9008270D9 /* Store.swift in Sources */,
 				9D791DE921BB837B008270D9 /* ViewController.swift in Sources */,
+				9D791DFE21BC9D68008270D9 /* Border.swift in Sources */,
+				9D791DFC21BC9C5F008270D9 /* Country.swift in Sources */,
 				9D791DE721BB837B008270D9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2MGZ3HYXY;
 				INFOPLIST_FILE = "mad4114-map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +325,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2MGZ3HYXY;
 				INFOPLIST_FILE = "mad4114-map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
