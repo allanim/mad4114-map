@@ -27,7 +27,6 @@ struct Border {
         for s in 0...size {
             if s < size {
                 for d in (s+1)...size {
-                    print(String(s) + " : " + String(d))
                     result.append(Distance(source: contries[s], destination:  contries[d]))
                 }
             }
