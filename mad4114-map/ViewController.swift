@@ -46,11 +46,30 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         pickUpCountry1()
         pickUpCountry2()
         
+        
+        var border = Border()
+        for country in Store.countries {
+            border.addCountry(country)
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? DistanceTableViewController {
+            var border = Border();
+            border.addCountry(selectedCountry1!)
+            border.addCountry(selectedCountry2!)
+            
+            for country in Store.countries {
+                if (country.name != selectedCountry1?.name && country.name != selectedCountry2?.name) {
+                    border.addCountry(country)
+                }
+            }
+            dest.distiances = border.distance()
+        }
     }
     
     func reloadCountries() {
-        let source = CLLocation(latitude: 33.5784793, longitude: 126.2921634)
-        
         for country in Store.countries {
             let pointAnnotation = MKPointAnnotation()
             pointAnnotation.coordinate = CLLocationCoordinate2DMake(country.latitude, country.longitude)
@@ -61,6 +80,27 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     }
 
     @IBAction func btnGo(_ sender: Any) {
+        if (selectedCountry1 == nil) {
+            let alert = makeAlert(txtCountry1st, message: "Please select the 1st country")
+            self.present(alert, animated: true, completion: {})
+        } else if (selectedCountry2 == nil) {
+            let alert = makeAlert(txtCountry2nd, message: "Please select the 2st country")
+            self.present(alert, animated: true, completion: {})
+        } else if (selectedCountry1?.name == selectedCountry2?.name) {
+            let alert = makeAlert(txtCountry2nd, message: "Please select diffrent country")
+            self.present(alert, animated: true, completion: {})
+        } else {
+            performSegue(withIdentifier: "detail", sender: self)
+        }
+    }
+    
+    func makeAlert(_ field: UITextField, message: String) -> UIAlertController {
+        // show error message
+        let alert = UIAlertController(title: "Invalid ", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Done", style: .default, handler: {_ in
+            field.becomeFirstResponder()
+        }))
+        return alert
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -82,14 +122,6 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         return annotationView
     }
     
-    // Drawing a red circle to pin on map
-//    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-//        let circleRenderer = MKCircleRenderer(overlay: overlay)
-//        circleRenderer.strokeColor = UIColor.red
-//        circleRenderer.lineWidth = 1.0
-//        return circleRenderer
-//    }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
         // Here we define the map's zoom. The value 0.01 is a pattern
@@ -107,10 +139,6 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         // Showing the blue dot in a map
         //mapView.showsUserLocation = true
 
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-//        reload?(true) // Use callback to return data
     }
     
     func pickUpCountry1(){

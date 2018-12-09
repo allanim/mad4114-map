@@ -16,6 +16,7 @@
 		9D791DFC21BC9C5F008270D9 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D791DFB21BC9C5F008270D9 /* Country.swift */; };
 		9D791DFE21BC9D68008270D9 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D791DFD21BC9D68008270D9 /* Border.swift */; };
 		9D791E0021BC9FE9008270D9 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D791DFF21BC9FE9008270D9 /* Store.swift */; };
+		9D791E0221BD68A3008270D9 /* DistanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D791E0121BD68A3008270D9 /* DistanceTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9D791DFB21BC9C5F008270D9 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		9D791DFD21BC9D68008270D9 /* Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
 		9D791DFF21BC9FE9008270D9 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9D791E0121BD68A3008270D9 /* DistanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				9D791DE621BB837B008270D9 /* AppDelegate.swift */,
 				9D791DE821BB837B008270D9 /* ViewController.swift */,
+				9D791E0121BD68A3008270D9 /* DistanceTableViewController.swift */,
 				9D791DEA21BB837B008270D9 /* Main.storyboard */,
 				9D791DED21BB837C008270D9 /* Assets.xcassets */,
 				9D791DEF21BB837C008270D9 /* LaunchScreen.storyboard */,
@@ -160,6 +163,7 @@
 				9D791DE921BB837B008270D9 /* ViewController.swift in Sources */,
 				9D791DFE21BC9D68008270D9 /* Border.swift in Sources */,
 				9D791DFC21BC9C5F008270D9 /* Country.swift in Sources */,
+				9D791E0221BD68A3008270D9 /* DistanceTableViewController.swift in Sources */,
 				9D791DE721BB837B008270D9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

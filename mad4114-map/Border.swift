@@ -7,22 +7,49 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct Border {
     
-    var sources: [Country]
-    var dastinations: [Country]
+    var contries: [Country]
     
     init() {
-        sources = []
-        dastinations = []
+        contries = []
     }
     
-    mutating func addSource(_ country: Country) {
-        self.sources.append(country)
+    mutating func addCountry(_ country: Country) {
+        self.contries.append(country)
     }
     
-    mutating func addDastination(_ country: Country) {
-        self.dastinations.append(country)
+    func distance() -> [Distance] {
+        var result: [Distance] = []
+        let size = contries.count - 1
+        for s in 0...size {
+            if s < size {
+                for d in (s+1)...size {
+                    print(String(s) + " : " + String(d))
+                    result.append(Distance(source: contries[s], destination:  contries[d]))
+                }
+            }
+        }
+        
+        return result
+    }
+    
+}
+
+struct Distance {
+    var source: Country
+    var destination: Country
+    var distance: Double
+    
+    init(source: Country, destination: Country) {
+        self.source = source
+        self.destination = destination
+        self.distance = CLLocation(latitude: source.latitude, longitude: source.longitude).distance(from: CLLocation(latitude: destination.latitude, longitude: destination.longitude))
+    }
+    
+    var description: String {
+        return source.name + " to " + destination.name + " : " + String(distance)
     }
 }

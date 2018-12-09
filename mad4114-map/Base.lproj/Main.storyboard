@@ -33,7 +33,7 @@
                                         <rect key="frame" x="207" y="4" width="160" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ALS-GJ-vwQ">
@@ -47,7 +47,7 @@
                                         <rect key="frame" x="8" y="4" width="160" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -64,7 +64,7 @@
                     <navigationItem key="navigationItem" title="Map" id="m8n-eL-rd2">
                         <barButtonItem key="rightBarButtonItem" title="Go" id="ddg-jN-eVi">
                             <connections>
-                                <action selector="btnGo:" destination="BYZ-38-t0r" id="Smo-cY-F5C"/>
+                                <action selector="btnGo:" destination="BYZ-38-t0r" id="e5l-Kz-fDV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -72,28 +72,49 @@
                         <outlet property="mapView" destination="FSp-ln-H40" id="IPE-7s-FdD"/>
                         <outlet property="txtCountry1st" destination="VKx-hT-maX" id="wgw-C5-Fjd"/>
                         <outlet property="txtCountry2nd" destination="ALS-GJ-vwQ" id="gu1-Vv-HKr"/>
+                        <segue destination="bVe-cN-6OG" kind="show" identifier="detail" id="irw-fx-AOk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="997.60000000000002" y="-565.36731634182911"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Distances-->
         <scene sceneID="1Ms-2f-IML">
             <objects>
-                <tableViewController id="bVe-cN-6OG" sceneMemberID="viewController">
+                <tableViewController id="bVe-cN-6OG" customClass="DistanceTableViewController" customModule="mad4114_map" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="W5F-0O-aWI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="jmW-WW-I42">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detail" rowHeight="55" id="jmW-WW-I42" customClass="DetailTableViewCell" customModule="mad4114_map" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jmW-WW-I42" id="uPw-rO-C4w">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVE-kV-NJO">
+                                            <rect key="frame" x="254" y="11" width="105" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMp-rE-yhg">
+                                            <rect key="frame" x="16" y="11" width="230" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="key" destination="LMp-rE-yhg" id="Pu3-dU-T8g"/>
+                                    <outlet property="value" destination="iVE-kV-NJO" id="yJ4-E7-LXc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -101,10 +122,11 @@
                             <outlet property="delegate" destination="bVe-cN-6OG" id="eIk-9Q-FcS"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Distances" id="Hjh-7D-13h"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfa-9n-ZN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1774" y="-565"/>
+            <point key="canvasLocation" x="1773.5999999999999" y="-565.36731634182911"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="212-16-7Tj">
